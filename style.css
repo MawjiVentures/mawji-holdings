@@ -1,0 +1,179 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #0a0a0a;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Flex layout for full height & footer positioning */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #00ff00;
+}
+header h1 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+nav ul li {
+  margin: 0 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #00ff00;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #ccffcc;
+}
+
+/* Hero Section */
+.hero {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 60px 20px;
+  text-align: center;
+}
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+.cta-button {
+  display: inline-block;
+  background: #00ff00;
+  color: #0a0a0a;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+.cta-button:hover {
+  background: #ccffcc;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #111;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #00ff00;
+}
+
+/* Animate on Scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typewriter Effect */
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #00ff00; }
+}
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #00ff00;
+  display: inline-block;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Additional Content Styling */
+ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+ul li {
+  margin-bottom: 8px;
+}
+pre {
+  background-color: #222;
+  padding: 10px;
+  overflow-x: auto;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+}
+
+/* Card Grid Layout for Portfolio, Team, and Contact Pages */
+.card-grid, .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Card Styling for Portfolio, Team, and Contact Cards */
+.project-card, .team-card, .contact-card {
+  background-color: #222;
+  padding: 20px;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover, .team-card:hover, .contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00ff00;
+}
+.project-card h3, .team-card h3, .contact-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  color: #ccffcc;
+}
+.project-card p, .team-card p, .contact-card p {
+  font-size: 0.95em;
+}
