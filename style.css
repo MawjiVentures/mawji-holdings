@@ -1,82 +1,118 @@
-/* Reset & Base Styles */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base Styles */
 html, body {
-  height: 100%;
+  width: 100%;
+  min-height: 100%;
   background-color: #0a0a0a;
   color: #00ff00;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.4;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Flex layout for full height & footer positioning */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Header */
+/* Header & Navigation */
 header {
   background-color: #111;
-  padding: 20px;
-  text-align: center;
+  padding: 5px 10px;
   border-bottom: 1px solid #00ff00;
 }
-header h1 {
-  font-size: 2.5em;
-  letter-spacing: 2px;
-  text-shadow: 0 0 5px #00ff00;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: nowrap;
 }
-
-/* Navigation */
-nav ul {
+.logo h1 {
+  font-size: 1.4em;
+  color: #00ff00;
+}
+.nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  z-index: 999;
 }
-nav ul li {
-  margin: 0 20px;
+.nav-links li {
+  margin-left: 10px;
 }
-nav ul li a {
-  text-decoration: none;
+.nav-links li a {
   color: #00ff00;
+  font-size: 1em;
   transition: color 0.3s ease;
 }
-nav ul li a:hover {
+.nav-links li a:hover {
   color: #ccffcc;
 }
 
-/* Hero Section */
-.hero {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 60px 20px;
-  text-align: center;
+/* Theme Toggle Button */
+#themeToggle {
+  background: transparent;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  padding: 6px 12px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-left: 10px;
 }
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.hero h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-.hero p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-}
-.cta-button {
-  display: inline-block;
+#themeToggle:hover {
   background: #00ff00;
   color: #0a0a0a;
-  padding: 10px 20px;
-  text-decoration: none;
+  border-color: #00ff00;
+}
+
+/* Hamburger Menu (for mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger span {
+  height: 2px;
+  width: 20px;
+  background: #00ff00;
+  margin-bottom: 3px;
+  border-radius: 2px;
+}
+
+/* Hero Section - More Compact with Background Image for Hacker Mode */
+.hero {
+  position: relative;
+  height: 35vh;
+  background: url('images/hacker-bg.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+}
+.hero-content {
+  z-index: 1;
+}
+.hero-content h2 {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+  color: #00ff00;
+}
+.hero-content p {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  color: #00ff00;
+}
+.cta-button {
+  background: #00ff00;
+  color: #0a0a0a;
+  padding: 6px 12px;
   font-weight: bold;
   border-radius: 4px;
   transition: background 0.3s ease;
@@ -85,95 +121,313 @@ nav ul li a:hover {
   background: #ccffcc;
 }
 
-/* Main Content */
-main {
-  flex: 1;
-  width: 90%;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #111;
+/* Highlights Section (Index Page) */
+.highlights {
+  padding: 10px;
+  max-width: 1000px;
+  margin: 10px auto;
+}
+.highlights h2 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #00ff00;
+  padding-bottom: 5px;
+  color: #00ff00;
+  text-align: center;
+}
+.highlights-content {
+  display: grid;
+  gap: 15px;
+  margin-top: 10px;
+}
+/* Desktop: 4 columns */
+@media (min-width: 769px) {
+  .highlights-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* Mobile: 2 columns */
+@media (max-width: 768px) {
+  .highlights-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.highlight-item {
+  background-color: #0a0a0a;
+  padding: 15px;
   border: 1px solid #00ff00;
   border-radius: 4px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.highlight-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px #00ff00;
+}
+.highlight-item h3 {
+  margin-bottom: 5px;
+  color: #00ff00;
+  font-size: 1.1em;
+}
+.highlight-item p {
+  font-size: 0.9em;
+  color: #00ff00;
+}
+
+/* Content Areas for All Pages */
+.about-content,
+.portfolio-content,
+.team-content,
+.contact-content,
+.main-content,
+.thesis-content {
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 10px;
+}
+.about-content section,
+.portfolio-content section,
+.team-content section,
+.contact-content section,
+.main-content section,
+.thesis-content section {
+  margin-bottom: 20px;
+}
+.about-content h2,
+.portfolio-content h2,
+.team-content h2,
+.contact-content h2,
+.main-content h2,
+.thesis-content h2 {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #00ff00;
+  padding-bottom: 3px;
+  color: #00ff00;
+}
+/* Increase spacing for thesis page paragraphs */
+.thesis-content p {
+  margin-bottom: 15px;
+}
+.about-content p,
+.portfolio-content p,
+.team-content p,
+.contact-content p,
+.main-content p,
+	thesis-content p,
+.about-content ul,
+.portfolio-content ul,
+	.team-content ul,
+	.contact-content ul,
+	main-content ul,
+	thesis-content ul {
+  font-size: 0.9em;
+  margin: 10px 0;
+}
+.about-content ul,
+.portfolio-content ul,
+	.team-content ul,
+	.contact-content ul,
+	main-content ul,
+	thesis-content ul {
+  list-style: disc;
+  margin-left: 15px;
+}
+
+/* Card Grid for Portfolio & Team */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.project-card, .team-card, .contact-card {
+  background-color: #0a0a0a;
+  padding: 10px;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.project-card:hover, .team-card:hover, .contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px #00ff00;
+}
+.project-card h3, .team-card h3, .contact-card h3 {
+  margin-bottom: 5px;
+  color: #00ff00;
+}
+.project-card p, .team-card p, .contact-card p {
+  color: #00ff00;
 }
 
 /* Footer */
 footer {
-  background-color: #111;
-  padding: 15px;
+  background: #111;
   text-align: center;
+  padding: 10px 20px;
   border-top: 1px solid #00ff00;
+  font-size: 0.8em;
+  color: #00ff00;
 }
 
-/* Animate on Scroll */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: #111;
+    border: 1px solid #00ff00;
+    border-radius: 0 0 4px 4px;
+    padding: 5px;
+    z-index: 1000;
+  }
+  .nav-links li {
+    margin: 5px 0;
+    text-align: center;
+  }
+  .hamburger {
+    display: flex;
+  }
+  /* Keep theme toggle inline */
+  #themeToggle {
+    position: static;
+    margin-left: 10px;
+  }
+  /* BW mode mobile overrides for nav */
+  body.bw-mode .nav-links {
+    background: #fff !important;
+    border: 1px solid #000 !important;
+  }
+  body.bw-mode .nav-links li a {
+    color: #000 !important;
+  }
+  body.bw-mode header {
+    background-color: #000 !important;
+    border-bottom: 1px solid #000 !important;
+  }
+  body.bw-mode .logo h1,
+  body.bw-mode .nav-links li a {
+    color: #fff !important;
+  }
+  /* Force hamburger toggle spans to black in BW mode */
+  body.bw-mode .hamburger span {
+    background-color: #000 !important;
+  }
 }
-.fade-in {
-  opacity: 1;
-  transform: translateY(0);
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 1.2em;
+  }
+  .nav-links li a {
+    font-size: 0.9em;
+  }
+  .hero {
+    height: 30vh;
+    padding: 5px;
+  }
+  .hero-content h2 {
+    font-size: 1.4em;
+  }
+  .hero-content p {
+    font-size: 0.8em;
+  }
+  .about-content, .portfolio-content, .team-content, .contact-content, .main-content, .thesis-content {
+    padding: 5px;
+  }
 }
 
-/* Typewriter Effect */
-@keyframes typing {
-  from { width: 0; }
-  to   { width: 100%; }
+/* Black & White Mode Overrides */
+body.bw-mode {
+  background-color: #fff !important;
+  color: #000 !important;
 }
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #00ff00; }
+body.bw-mode a {
+  color: #000 !important;
 }
-.typing {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #00ff00;
-  display: inline-block;
-  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+body.bw-mode header {
+  background-color: #fff !important;
+  border-bottom: 1px solid #000 !important;
 }
-
-/* Additional Content Styling */
-ul {
-  margin-left: 20px;
-  margin-bottom: 15px;
+body.bw-mode .logo h1 {
+  color: #000 !important;
 }
-ul li {
-  margin-bottom: 8px;
+body.bw-mode .nav-links li a {
+  color: #000 !important;
 }
-pre {
-  background-color: #222;
-  padding: 10px;
-  overflow-x: auto;
-  border: 1px solid #00ff00;
+body.bw-mode footer {
+  background-color: #fff !important;
+  border-top: 1px solid #000 !important;
+  color: #000 !important;
+}
+body.bw-mode .cta-button {
+  background: #000 !important;
+  color: #fff !important;
+}
+/* Adjust Hero Section for BW Mode */
+body.bw-mode .hero {
+  background: url('images/bw-bg.png') no-repeat center center/cover !important;
+}
+body.bw-mode .hero-content h2 {
+  color: #ffffff  !important;
+  border-bottom: none !important;
+}
+body.bw-mode .hero-content p {
+  color: #ffffff  !important;
+}
+/* Adjust Underlines in BW Mode */
+body.bw-mode h2 {
+  border-bottom: 1px solid #000 !important;
+  color: #000 !important;
+}
+body.bw-mode .highlight-item h3 {
+  color: #000 !important;
+}
+body.bw-mode .highlight-item p {
+  color: #000 !important;
+}
+/* Additional BW overrides for content areas */
+body.bw-mode .about-content,
+body.bw-mode .portfolio-content,
+body.bw-mode .team-content,
+body.bw-mode .contact-content,
+body.bw-mode .main-content,
+body.bw-mode .thesis-content {
+  color: #000 !important;
+}
+/* Override for Highlight Items in BW Mode */
+body.bw-mode .highlight-item {
+  background-color: #fff !important;
+  border: 1px solid #000 !important;
+  color: #000 !important;
+}
+body.bw-mode .highlight-item h3 {
+  color: #000 !important;
+}
+body.bw-mode .highlight-item p {
+  color: #000 !important;
+}
+/* Theme Toggle Button in BW Mode */
+body.bw-mode #themeToggle {
+  background: transparent;
+  border: 2px solid #000;
+  color: #000;
+  padding: 6px 12px;
+  font-size: 1em;
+  cursor: pointer;
   border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-
-/* Card Grid Layout for Portfolio, Team, and Contact Pages */
-.card-grid, .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-/* Card Styling for Portfolio, Team, and Contact Cards */
-.project-card, .team-card, .contact-card {
-  background-color: #222;
-  padding: 20px;
-  border: 1px solid #00ff00;
-  border-radius: 4px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.project-card:hover, .team-card:hover, .contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #00ff00;
-}
-.project-card h3, .team-card h3, .contact-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.4em;
-  color: #ccffcc;
-}
-.project-card p, .team-card p, .contact-card p {
-  font-size: 0.95em;
+body.bw-mode #themeToggle:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
 }

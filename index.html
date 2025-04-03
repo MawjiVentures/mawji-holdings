@@ -2,59 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mawji Holdings - Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Consistent Header with Navigation and Theme Toggle -->
   <header>
-    <h1>Mawji Holdings</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="navbar">
+      <div class="logo">
+        <h1>Mawji Holdings</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="thesis.html">Thesis</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle">Black &amp; White</button>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero Section with a typewriter effect and CTA -->
-  <section class="hero animate-on-scroll">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="hero-content">
-      <h2 class="typing">Building the Future of Sovereign Technology</h2>
-      <p>We allocate capital, incubate companies, and focus heavily on internal R&amp;D to back founders building the future.</p>
-      <a href="contact.html" class="cta-button">Join Us</a>
+      <h2>Investing in the Future of Sovereign Technology</h2>
+      <p>We allocate capital and brain-power into world-changing ideas and entrepreneurs.</p>
+      <a href="thesis.html" class="cta-button">Understand our Thinking</a>
     </div>
   </section>
 
-  <main>
-    <section class="animate-on-scroll">
-      <p>We are a sovereign family office and venture engine. We allocate capital, incubate companies, invest and focus heavy on internal r&amp;d projects and back founders building the future.</p>
-      <p>We do three things:</p>
-      <ul>
-        <li>Operate as a family office built for generational sovereignty</li>
-        <li>Spin-out companies focused on open-source, trustless tech that often defi the status-quo</li>
-        <li>Back founders who outlive gatekeepers</li>
-      </ul>
-      <p>We invest in:</p>
-      <ul>
-        <li>Anarchist technology, open protocols, infrastructure layers, and autonomy-first systems.</li>
-      </ul>
-      <p>We don’t do:</p>
-      <ul>
-        <li>LinkedIn. Calendly. Venture theater.</li>
-      </ul>
-      <p>Reach us directly:</p>
-      <ul>
-        <li>hello@mawji.vc</li>
-        <li>Encrypted handshake only</li>
-      </ul>
-    </section>
-  </main>
+  <!-- Highlights Section -->
+  <section class="highlights">
+    <h2>What We Do</h2>
+    <div class="highlights-content">
+      <div class="highlight-item">
+        <h3>Generational Sovereignty</h3>
+        <p>Building technology and structures designed to endure — systems that outlast markets, hype cycles, and regimes.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Deep-Tech Innovation</h3>
+        <p>Backing breakthrough infrastructure and core technologies that reshape how we live, connect, and operate.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Privacy and Autonomy</h3>
+        <p>Protecting individual freedom through encrypted systems, anonymous protocols, and zero-surveillance design.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Sovereign Infrastructure</h3>
+        <p>Open-source, privacy-native, AI-integrated platforms that resist capture and empower the people who use them.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; Mawji Holdings</p>
+    <p>© 2025 Mawji Holdings. All rights reserved.</p>
   </footer>
+
   <script src="main.js"></script>
 </body>
 </html>

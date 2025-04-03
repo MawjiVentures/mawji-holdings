@@ -2,136 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mawji Holdings - Contact</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Terminal-inspired styling for the contact page */
-    body {
-      background-color: #000;
-      color: #0f0;
-      font-family: 'Courier New', monospace;
-      margin: 0;
-      padding: 20px;
-    }
-    header {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #0f0;
-    }
-    header h1 {
-      font-size: 2.5em;
-      letter-spacing: 2px;
-      text-shadow: 0 0 5px #0f0;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    nav ul li {
-      margin: 0 20px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #0f0;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: #ccffcc;
-    }
-    main {
-      margin: 20px auto;
-      max-width: 800px;
-    }
-    #terminal {
-      background-color: #111;
-      padding: 20px;
-      border: 1px solid #0f0;
-      min-height: 300px;
-      margin-bottom: 20px;
-      overflow-y: auto;
-    }
-    .line {
-      margin: 5px 0;
-    }
-    .prompt::before {
-      content: "Mawji Holdings> ";
-      color: #0f0;
-    }
-    #userInput {
-      width: 100%;
-      border: none;
-      outline: none;
-      background-color: #111;
-      color: #0f0;
-      font-family: 'Courier New', monospace;
-      font-size: 1em;
-      padding: 10px;
-      border: 1px solid #0f0;
-      margin-top: 10px;
-    }
-    footer {
-      background-color: #111;
-      padding: 15px;
-      text-align: center;
-      border-top: 1px solid #0f0;
-      margin-top: 20px;
-    }
-  </style>
 </head>
 <body>
+  <!-- Header with Navigation and Theme Toggle -->
   <header>
-    <h1>Contact Terminal</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <div id="terminal">
-      <div class="line">Welcome to the secure contact terminal.</div>
-      <div class="line">Solve the riddle below to unlock our contact email:</div>
-      <div class="line"><strong>Riddle:</strong> What is the answer to life, the universe, and everything?</div>
-      <div class="line">Enter your answer below and press Enter.</div>
+    <div class="navbar">
+      <div class="logo">
+        <h1>Mawji Holdings</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="thesis.html">Thesis</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle">Black &amp; White</button>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <input type="text" id="userInput" placeholder="Type your answer here..." autofocus />
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero contact-hero">
+    <div class="hero-content">
+      <h2>Contact Us</h2>
+      <p>If you’re ready to connect, drop us a line.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="contact-content">
+    <section>
+      <h2>Get in Touch</h2>
+      <p>Email: <a href="mailto:hello@mawji.vc">hello@mawji.vc</a></p>
+      <p>Encrypted handshake only</p>
+    </section>
   </main>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; Mawji Holdings</p>
+    <p>© 2025 Mawji Holdings. All rights reserved.</p>
   </footer>
-  <script>
-    const userInput = document.getElementById('userInput');
-    const terminal = document.getElementById('terminal');
 
-    function appendLine(text) {
-      const line = document.createElement('div');
-      line.classList.add('line');
-      line.textContent = text;
-      terminal.appendChild(line);
-      terminal.scrollTop = terminal.scrollHeight;
-    }
-
-    userInput.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') {
-        const answer = userInput.value.trim();
-        // Display what the user typed with the prompt prefix
-        appendLine("Mawji Holdings> " + answer);
-        
-        // Check if the answer is correct ("42")
-        if (answer === "42") {
-          appendLine("Access granted. Contact Email: hello@mawji.vc");
-        } else {
-          appendLine("Access denied. Incorrect answer.");
-        }
-        userInput.value = "";
-      }
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
