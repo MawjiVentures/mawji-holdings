@@ -324,3 +324,83 @@ footer {
 }
 
 /* (Black & White Mode removed entirely) */
+
+/* How We Work? Grid - 2 columns on desktop, 1 column on mobile */
+.how-work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* On mobile: stack items */
+@media (max-width: 768px) {
+  .how-work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual How Work Items */
+.how-work-item {
+  background: linear-gradient(135deg, #0a0a0a, #222);
+  padding: 20px;
+  border: 1px solid #00ff00;
+  border-radius: 6px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.how-work-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00ff00;
+  background: linear-gradient(135deg, #111, #333);
+}
+
+.how-work-item h3 {
+  margin-bottom: 10px;
+  color: #00ff00;
+  font-size: 1.2em;
+}
+
+.how-work-item p {
+  margin: 0;
+  color: #00ff00;
+  font-size: 1em;
+  line-height: 1.5;
+}
+/* Team Roles - Stack in a Single Column for All Devices */
+.team-roles {
+  display: grid;
+  grid-template-columns: 1fr; /* Always a single column layout */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Individual Role Boxes */
+.role-item {
+  background: linear-gradient(135deg, #0a0a0a, #222);
+  padding: 20px;
+  border: 1px solid #00ff00;
+  border-radius: 6px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.role-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00ff00;
+  background: linear-gradient(135deg, #111, #333);
+}
+
+.role-item h3 {
+  margin-bottom: 10px;
+  color: #00ff00;
+  font-size: 1.2em;
+}
+
+.role-item p {
+  margin: 0;
+  color: #00ff00;
+  font-size: 1em;
+  line-height: 1.5;
+}
