@@ -404,3 +404,16 @@ footer {
   font-size: 1em;
   line-height: 1.5;
 }
+
+/* Tagline Styles */
+.tagline {
+  margin-right: 20px;
+  /* Adjust positioning as needed */
+}
+
+.tagline p {
+  color: #00ff00;
+  font-size: 1em;
+  font-style: italic;
+  margin: 0;
+}
